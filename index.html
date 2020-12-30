@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Files and Folder Srtucture</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-slider.css">
+    <link rel="stylesheet" href="css/mainStyles.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+</head>
+
+<body onload="Connect()">
+    <div class="navbar_wraper">
+        <!-- will load common navbar with js $().load() method -->
+    </div>
+    <section class="home_header">
+        <div class="container">
+            <!--Main View and Room Select  -->
+            <div class="row">
+
+                <div class="col-lg-4">
+
+
+                    <div class="col-lg-12 h-50 border rounded" style="margin-right: 2%;">
+                        <h5>Messages</h5>
+                    </div>
+
+
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe src="https://obs.ninja/?room=frank_group5&audiodevice=0&roombitrate=500"
+                            allow="camera;microphone">
+                        </iframe>
+                    </div>
+
+       
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe
+                            src="https://player.twitch.tv/?channel=frankroomfive&parent=frankwomencollective.github.io&muted=false"
+                            allowfullscreen class="second-row" title="Living Room"></iframe>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row justify-content-end" style="padding-top: 1.5%; padding-left: 0%;">
+
+                <div class="col-lg-4 border rounded " style="margin-left: 1%;">
+                    <h5>Scene Controls</h5>
+                    <div class="col-6 d-table">       
+                        <div class="d-table-cell" style="text-align: center;">
+                            <p>Offset</p>
+                            <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
+                            id="sliderOffset">
+                        </div>
+
+                        <div class="d-table-cell" style="text-align: center;">
+                            <p>Speed</p>
+                            <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
+                                id="sliderSpeed">
+                        </div>
+
+                        <div class="d-table-cell" style="text-align: center;">
+                            <p>Period</p>
+                            <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
+                                id="sliderPeriod">
+                        </div>
+
+                        <div class="d-table-cell" style="text-align: center;">
+                            <p>Amplitude</p>
+                            <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
+                                id="sliderAmplitude">
+                        </div>                    
+                    </div>
+                </div>
+
+                <div class="col-lg-4 border rounded" style="margin-left: 1%;">
+                    <h5>Camera Controls</h5>
+
+                    <div class="col-12 d-table">
+
+                        <label for="PanBlock">Pan</label>
+                        <div class="d-table-cell" style="vertical-align: middle;" id="PanBlock">
+                            <input type="range" min="1" max="100" value="50" class="slider" 
+                                id="sliderPan">
+                        </div>
+
+                        <div class="d-table-cell" style="text-align: center;">
+                            <p>Tilt</p>
+                            <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
+                                id="sliderTilt">
+                        </div>
+
+                        <div class="d-table-cell" style="text-align: center;">
+                            <p>Zoom</p>
+                            <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
+                                id="sliderZoom">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <div class="footer_wraper">
+        <!-- will load common footer with js $().load() method -->
+    </div>
+
+    <script src="dependencies/js/jquery.min.js"></script>
+    <script src="dependencies/js/popper.min.js"></script>
+    <script src="dependencies/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-slider.js"></script>
+    <script src="js/mainFunctions.js"></script>
+    <script src="dependencies/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- MQTT Websockets Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+
+    <script>
+
+        var topic = "pixelGarden"
+        var sliderPan = document.getElementById("sliderPan");
+        var sliderTilt = document.getElementById("sliderTilt");
+        var sliderZoom = document.getElementById("sliderZoom");
+
+
+
+
+        sliderPan.oninput = function() {
+            PublishMessage("Pan/" + String(this.value), topic);
+        }
+
+        sliderTilt.oninput = function() {
+            PublishMessage("Tilt/" + String(this.value), topic);
+        }
+
+        sliderZoom.oninput = function() {
+            PublishMessage("Zoom/" + String(this.value), topic);
+        }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+body{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: gray;
+}
+
+
+.container {
+    max-width: 90%;
+    padding-top: 2.5%;
+}
+
+.video_wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */ 
+}
+
+iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+    
+.audience_wrapper {
+    position: relative;
+    padding-bottom: 116.50%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */ 
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+
+@import './__responsive_mixins';
+@import './__fonts';
+@import './__colors';
+@import './__typography';
+@import './__slider';
+
+
+// sections
+@import './__navbar';
+@import './__footer';
+
+// pages
+@import './__home';
+@import './__about';
+
+
+
+.mob_hidden{
+    display: block;
+    @include responsive_mobile(){
+        display: none;
+    }
+}
+
+.tab_hidden{
+    display: block;
+    @include responsive_tab(){
+        display: none;
+    }
+}
