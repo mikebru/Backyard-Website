@@ -117,6 +117,7 @@ iframe {
   /* Full-width */
   height: 20px;
   /* Specified height */
+  min-width: 75px;
   -webkit-transition: .2s;
   /* 0.2 seconds transition on hover */
   transition: opacity .2s; }
@@ -127,7 +128,8 @@ input.vertical {
   width: 20px;
   /* Full-width */
   height: 100%;
-  /* Specified height */ }
+  /* Specified height */
+  max-height: 100px; }
 
 /* Mouse-over effects */
 .slider:hover {
