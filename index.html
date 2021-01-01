@@ -22,88 +22,88 @@
             <!--Main View and Room Select  -->
             <div class="row">
 
-                <div class="col-4">
+                <div class="col-4 border rounded">
 
-                    <div class="embed-responsive embed-responsive-16by9">
+                    <div class="embed-responsive embed-responsive-1by1">
                         <iframe src="https://obs.ninja/?scene=0&room=frank_group5&roombitrate=500"
                             allow="camera;microphone">
                         </iframe>
                     </div>
 
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe src="https://obs.ninja/?room=frank_group5&view"
-                             allow="camera;microphone">
+                        <iframe src="https://obs.ninja/?room=frank_group5&view" allow="camera;microphone">
                         </iframe>
                     </div>
 
-       
+
                 </div>
 
-                <div class="col-8">
+                <div class="col-8 border rounded">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe
-                            src="https://obs.ninja/?view=pyramid&bitrate=5000"
-                            allowfullscreen class="second-row" title="Living Room"></iframe>
+                        <iframe src="https://obs.ninja/?view=pyramid&bitrate=5000" allowfullscreen class="second-row"
+                            title="Living Room"></iframe>
                     </div>
+
+                    <div class="d-flex flex-row justify-content-center" style="padding-top: 1.5%; padding-left: 0%;">
+
+                        <div class="col-5 border rounded " style="margin-left: 1%;">
+                            <h5>Scene Controls</h5>
+                            <div class="col-6 d-table">
+                                <div class="d-table-cell" style="text-align: center;">
+                                    <p>Offset</p>
+                                    <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
+                                        id="sliderOffset">
+                                </div>
+
+                                <div class="d-table-cell" style="text-align: center;">
+                                    <p>Speed</p>
+                                    <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
+                                        id="sliderSpeed">
+                                </div>
+
+                                <div class="d-table-cell" style="text-align: center;">
+                                    <p>Period</p>
+                                    <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
+                                        id="sliderPeriod">
+                                </div>
+
+                                <div class="d-table-cell" style="text-align: center;">
+                                    <p>Amplitude</p>
+                                    <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
+                                        id="sliderAmplitude">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-5 border rounded" style="margin-left: 1%;">
+                            <h5>Camera Controls</h5>
+
+                            <div class="col-12 d-table">
+
+                                <label for="PanBlock">Pan</label>
+                                <div class="d-table-cell" style="vertical-align: middle;" id="PanBlock">
+                                    <input type="range" min="1" max="100" value="50" class="slider" id="sliderPan">
+                                </div>
+
+                                <div class="d-table-cell" style="text-align: center;">
+                                    <p>Tilt</p>
+                                    <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
+                                        id="sliderTilt">
+                                </div>
+
+                                <div class="d-table-cell" style="text-align: center;">
+                                    <p>Zoom</p>
+                                    <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
+                                        id="sliderZoom">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="row justify-content-end" style="padding-top: 1.5%; padding-left: 0%;">
 
-                <div class="col-md-4 border rounded " style="margin-left: 1%;">
-                    <h5>Scene Controls</h5>
-                    <div class="col-6 d-table">       
-                        <div class="d-table-cell" style="text-align: center;">
-                            <p>Offset</p>
-                            <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
-                            id="sliderOffset">
-                        </div>
-
-                        <div class="d-table-cell" style="text-align: center;">
-                            <p>Speed</p>
-                            <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
-                                id="sliderSpeed">
-                        </div>
-
-                        <div class="d-table-cell" style="text-align: center;">
-                            <p>Period</p>
-                            <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
-                                id="sliderPeriod">
-                        </div>
-
-                        <div class="d-table-cell" style="text-align: center;">
-                            <p>Amplitude</p>
-                            <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
-                                id="sliderAmplitude">
-                        </div>                    
-                    </div>
-                </div>
-
-                <div class="col-md-4 border rounded" style="margin-left: 1%;">
-                    <h5>Camera Controls</h5>
-
-                    <div class="col-12 d-table">
-
-                        <label for="PanBlock">Pan</label>
-                        <div class="d-table-cell" style="vertical-align: middle;" id="PanBlock">
-                            <input type="range" min="1" max="100" value="50" class="slider" 
-                                id="sliderPan">
-                        </div>
-
-                        <div class="d-table-cell" style="text-align: center;">
-                            <p>Tilt</p>
-                            <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
-                                id="sliderTilt">
-                        </div>
-
-                        <div class="d-table-cell" style="text-align: center;">
-                            <p>Zoom</p>
-                            <input type="range" min="1" max="100" value="50" class="vertical" orient="vertical"
-                                id="sliderZoom">
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
         </div>
@@ -137,25 +137,25 @@
         var sliderAmplitude = document.getElementById("sliderAmplitude");
 
 
-        sliderPan.oninput = function() {
+        sliderPan.oninput = function () {
             PublishMessage("Pan/" + String(this.value), topic);
         }
-        sliderTilt.oninput = function() {
+        sliderTilt.oninput = function () {
             PublishMessage("Tilt/" + String(this.value), topic);
         }
-        sliderZoom.oninput = function() {
+        sliderZoom.oninput = function () {
             PublishMessage("Zoom/" + String(this.value), topic);
         }
-        sliderOffset.oninput = function() {
+        sliderOffset.oninput = function () {
             PublishMessage("Offset/" + String(this.value), topic);
         }
-        sliderSpeed.oninput = function() {
+        sliderSpeed.oninput = function () {
             PublishMessage("Speed/" + String(this.value), topic);
         }
-        sliderPeriod.oninput = function() {
+        sliderPeriod.oninput = function () {
             PublishMessage("Period/" + String(this.value), topic);
         }
-        sliderAmplitude.oninput = function() {
+        sliderAmplitude.oninput = function () {
             PublishMessage("Amplitude/" + String(this.value), topic);
         }
 

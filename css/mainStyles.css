@@ -4,7 +4,8 @@ body {
   padding: 0;
   margin: 0;
   background-color: gray;
-  background-image: url("/img/Backgrounds/Bees.4.gif"); }
+  background-image: url("../img/Backgrounds/Bees.4.gif");
+  color: whitesmoke; }
 
 .container {
   max-width: 90%;
@@ -44,7 +45,7 @@ iframe {
 
 .roboto_regular_base, .robo_reg_26, .robo_reg_22, .robo_reg_16, .robo_reg_12 {
   font-family: 'Roboto_Regular';
-  color: #1a1a1a; }
+  color: whitesmoke; }
 
 .robo_reg_26 {
   font-size: 26px; }
