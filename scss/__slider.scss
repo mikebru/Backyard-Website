@@ -6,7 +6,7 @@
   .slider {
     width: 75%; /* Full-width */
     height: 20px; /* Specified height */
-    min-width: 75px;
+    max-width: 100px;
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
   }
@@ -16,7 +16,7 @@
     writing-mode: bt-lr;
     width: 20px; /* Full-width */
     height: 100%; /* Specified height */
-    max-height: 100px;
+    max-height: 75px;
   }
   
   /* Mouse-over effects */
