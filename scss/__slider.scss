@@ -15,8 +15,12 @@
     -webkit-appearance: slider-vertical;
     writing-mode: bt-lr;
     width: 20px; /* Full-width */
-    height: 100%; /* Specified height */
+    height: 100px; /* Specified height */
     max-height: 75px;
+    color: red;
+    background: red;
+    cursor: pointer;
+    scrollbar-track-color: red;
   }
   
   /* Mouse-over effects */
