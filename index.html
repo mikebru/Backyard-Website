@@ -46,7 +46,7 @@
 
                     <div class="row justify-content-center" style="padding-top: 1.5%; padding-left: 0%;">
 
-                        <div class="col-sm-6 border rounded ">
+                        <div class="col-sm-8 border rounded ">
                             <h5>Scene Controls</h5>
                             <div class="col-12 d-table">
                                 <div class="d-table-cell" style="text-align: center;">
@@ -72,10 +72,25 @@
                                     <input type="range" min="0.0" max="3.0" value="1" class="vertical" step=".01" orient="vertical"
                                         id="sliderAmplitude">
                                 </div>
+
+
+                                <div class="d-table-cell" style="text-align: center;">
+                                    <p>Wavetype</p>
+                                    <input type="range" min="0" max="5" value="1" class="vertical" step="1" orient="vertical"
+                                        id="waveChannel">
+                                </div>
+
+
+                                <div class="d-table-cell" style="text-align: center;">
+                                    <p>Channel</p>
+                                    <input type="range" min="0" max="3" value="1" class="vertical" step="1" orient="vertical"
+                                        id="sliderChannel">
+                                </div>
+
                             </div>
                         </div>
 
-                        <div class="col-sm-6 border rounded">
+                        <div class="col-sm-4 border rounded">
                             <h5>Camera Controls</h5>
 
                             <div class="col-12 d-table">
@@ -135,6 +150,8 @@
         var sliderSpeed = document.getElementById("sliderSpeed");
         var sliderPeriod = document.getElementById("sliderPeriod");
         var sliderAmplitude = document.getElementById("sliderAmplitude");
+        var sliderChannel = document.getElementById("sliderChannel");
+        var waveChannel = document.getElementById("waveChannel");
 
 
         sliderPan.oninput = function () {
@@ -157,6 +174,12 @@
         }
         sliderAmplitude.oninput = function () {
             PublishMessage("Amplitude/" + String(this.value), topic);
+        }
+        sliderChannel.oninput = function () {
+            PublishMessage("Channel/" + String(this.value), topic);
+        }
+        waveChannel.oninput = function () {
+            PublishMessage("Wave/" + String(this.value), topic);
         }
 
     </script>
